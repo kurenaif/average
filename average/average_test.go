@@ -37,6 +37,7 @@ func TestAverage(t *testing.T) {
 
 	for _, test := range tests {
 		descr := fmt.Sprintf("Average(w, %d)", test.arr)
+		t.Logf("testing... %s", descr)
 		buf := new(bytes.Buffer)
 		Average(buf, test.arr)
 		var scanner = bufio.NewScanner(buf)
