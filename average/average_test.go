@@ -35,11 +35,14 @@ func TestAverage(t *testing.T) {
 		{[]int{1, 5, 2, 4, 3}, []float64{3.0, 2.666666, 3.6666666, 3.0, 3.5}},
 	}
 
-	for _, test := range tests {
+	for i, test := range tests {
 		descr := fmt.Sprintf("Average(w, %d)", test.arr)
-		t.Logf("testing... %s", descr)
+		fmt.Printf("test case %d:\n", i)
+		fmt.Printf("  in: %d\n", test.arr)
 		buf := new(bytes.Buffer)
+		buf.String()
 		Average(buf, test.arr)
+		fmt.Printf("  out: %q\n", buf.String())
 		var scanner = bufio.NewScanner(buf)
 		scanner.Split(bufio.ScanWords)
 		got := []float64{}
