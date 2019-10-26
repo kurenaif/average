@@ -20,6 +20,11 @@ func max(lhs int, rhs int) int {
 }
 
 func print(w io.Writer, arr []int) {
+	if len(arr) == 0 {
+		fmt.Fprintf(w, "\n")
+		return
+	}
+
 	for i, v := range arr {
 		fmt.Fprintf(w, "%d", v)
 		if i != len(arr)-1 {
