@@ -3,7 +3,7 @@ package main
 import (
 	"os"
 
-	"./average"
+	"average/average"
 )
 
 func main() {
